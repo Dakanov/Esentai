@@ -35,7 +35,8 @@ class CustomTextField: UIView {
         bottomStack()
     }
 
-    func setDatePicker(){
+    func setDatePicker(title: String = ""){
+        titleLabel.set(title: title, font: .systemFont(ofSize: 12))
         standart()
         picker.datePickerMode =  .date
         picker.maximumDate = Date()

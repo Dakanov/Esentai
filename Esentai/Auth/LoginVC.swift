@@ -57,6 +57,9 @@ class LoginVC: ScrollStackController {
         attributedString1.append(attributedString2)
         prefix.attributedText = attributedString1
         prefix.textAlignment = .center
+        prefix.addTapGestureRecognizer {
+            RegisterVC.open(vc: self)
+        }
         self.stackView.addArrangedSubview(prefix)
     }
     @objc func loginPressed(_ sender:UIButton){

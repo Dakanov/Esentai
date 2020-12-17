@@ -34,7 +34,7 @@ class RegisterVC: ScrollStackController {
         phone.textField.keyboardType = .phonePad
         stackView.addArrangedSubview(phone)
         
-        date.setDatePicker()
+        date.setDatePicker(title: "Дата рождения")
         stackView.addArrangedSubview(date)
         bottomView()
     }
@@ -59,9 +59,18 @@ class RegisterVC: ScrollStackController {
     }
     
     @objc func registerPressed(_ sender:UIButton){
-        guard let mobile = phone.textField.text, mobile.count == 10 else { return }
-        guard let name = name.textField.text, name != "" else { return }
-        guard let bDay = date.textField.text, bDay != "" else { return }
+        guard let name = name.textField.text, name != "" else {
+            self.name.titleLabel.textColor = .red
+            return }
+        self.name.titleLabel.textColor = .black
+        guard let mobile = phone.textField.text, mobile.count == 10 else {
+            self.phone.titleLabel.textColor = .red
+            return }
+        self.phone.titleLabel.textColor = .black
+        guard let bDay = date.textField.text, bDay != "" else {
+            self.date.titleLabel.textColor = .red
+            return }
+        self.phone.titleLabel.textColor = .black
         let p = [ "countrycode" : "+7",
                   "mobileNo": mobile,
                   "type":"register"
