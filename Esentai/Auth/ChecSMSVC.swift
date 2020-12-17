@@ -30,7 +30,10 @@ class ChecSMSVC: ScrollStackController {
     func setViews(){
         topTitle.set(title: "Верификация", font: .systemFont(ofSize: 32))
         titleLabel.set(title: "Введите SMS-код, присланный на  +7 (700) 000 0000", font: .systemFont(ofSize: 20),numberOfLines: 0)
-        
+        setTexfieldSettings()
+        bottomStack()
+    }
+    func setTexfieldSettings(){
         textStack.axis = .horizontal
         textStack.alignment = .fill
         textStack.distribution = .equalCentering
@@ -53,7 +56,6 @@ class ChecSMSVC: ScrollStackController {
         second.addTarget(self, action: #selector(didChange(_:)), for: .editingChanged)
         third.addTarget(self, action: #selector(didChange(_:)), for: .editingChanged)
         fours.addTarget(self, action: #selector(didChange(_:)), for: .editingChanged)
-        bottomStack()
     }
     func bottomStack(){
         let prefix = UILabel()
