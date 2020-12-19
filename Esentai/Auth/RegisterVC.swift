@@ -75,12 +75,14 @@ class RegisterVC: ScrollStackController {
                   "mobileNo": mobile,
                   "type":"register"
         ] as [String:AnyObject]
-        let userParams = [ "digits_reg_name" :  name,
-                  "digits_reg_mobile": mobile,
-                  "digits_reg_birth_date": bDay
+        let userParams = ["digits_reg_countrycode":"+7",
+                          "digits_reg_username" :  name,
+                          "digits_reg_mobile": mobile,
+                          "digits_reg_birth_date": bDay,
+                  
         ] as [String:AnyObject]
         Requests.shared().sendOTP(params: p) { (r) in
-            ChecSMSVC.open(vc: self, register: true, params: userParams)
+            ChecSMSVC.open(vc: self, register: true, params: userParams,SMSparams: p)
         }
     }
     

@@ -56,6 +56,5 @@ class ViewController: UIViewController {
         RegisterVC.open(vc: self)
     }
 
-
 }
 

@@ -19,9 +19,18 @@ class Requests: NSObject {
         class func shared() -> Requests {
             return sharedReference
         }
-    func sendOTP(params : [String: AnyObject], callback: @escaping (RootClass?) -> ()) {
-        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/send_otp", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseObject{
-            (response: DataResponse<RootClass>) in
+    func sendOTP(params : [String: AnyObject], callback: @escaping (SMSObject?) -> ()) {
+        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/send_otp", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject{
+            (response: DataResponse<SMSObject>) in
+            if let _ = response.response{
+                let model = response.result
+                callback(model.value ?? nil)
+            }
+        }
+    }
+    func verifyOtp(params : [String: AnyObject], callback: @escaping (SMSObject?) -> ()) {
+        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/verify_otp", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject{
+            (response: DataResponse<SMSObject>) in
             if let _ = response.response{
                 let model = response.result
                 callback(model.value ?? nil)
@@ -29,9 +38,18 @@ class Requests: NSObject {
         }
     }
     
-    func createUser(params : [String: AnyObject], callback: @escaping (RootClass?) -> ()) {
-        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/create_user", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseObject{
-            (response: DataResponse<RootClass>) in
+    func createUser(params : [String: AnyObject], callback: @escaping (UserData?) -> ()) {
+        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/create_user", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject{
+            (response: DataResponse<UserData>) in
+            if let _ = response.response{
+                let model = response.result
+                callback(model.value ?? nil)
+            }
+        }
+    }
+    func login(params : [String: AnyObject], callback: @escaping (UserData?) -> ()) {
+        Alamofire.request("https://esentai-shop.kz/wp-json/digits/v1/login_user", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject{
+            (response: DataResponse<UserData>) in
             if let _ = response.response{
                 let model = response.result
                 callback(model.value ?? nil)

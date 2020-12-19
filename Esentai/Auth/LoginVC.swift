@@ -63,7 +63,18 @@ class LoginVC: ScrollStackController {
         self.stackView.addArrangedSubview(prefix)
     }
     @objc func loginPressed(_ sender:UIButton){
-        ChecSMSVC.open(vc: self)
+        guard let mobile = textField.textField.text, mobile.count == 10 else {
+            self.textField.titleLabel.textColor = .red
+            return }
+        let p = [ "countrycode" : "+7",
+                  "mobileNo": mobile,
+                  "type":"login"
+        ] as [String:AnyObject]
+        startLoading()
+        Requests.shared().sendOTP(params: p) { (r) in
+            self.stopLoading()
+            ChecSMSVC.open(vc: self,SMSparams: p)
+        }
     }
     static func open(vc:UIViewController) {
         let vcc = LoginVC()

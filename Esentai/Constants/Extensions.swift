@@ -24,9 +24,44 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    func showAlert(withTitle title: String, withMessage message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+        })
+//        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in
+//        })
+        alert.addAction(ok)
+//        alert.addAction(cancel)
+        DispatchQueue.main.async(execute: {
+            self.present(alert, animated: true)
+        })
+    }
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+
+    static let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
+    func startLoading() {
+        let activityIndicator = UIViewController.activityIndicator
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .gray
+        DispatchQueue.main.async {
+            self.view.addSubview(activityIndicator)
+        }
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+
+    func stopLoading() {
+        let activityIndicator = UIViewController.activityIndicator
+        DispatchQueue.main.async {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+        }
+        UIApplication.shared.endIgnoringInteractionEvents()
+      }
 }
 extension UILabel {
     func set(title:String,font: UIFont = .systemFont(ofSize: 17, weight: UIFont.Weight.regular ),
