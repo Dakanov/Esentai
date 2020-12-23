@@ -8,7 +8,10 @@ target 'Esentai' do
 	pod 'AlamofireObjectMapper', '~> 5.0'
 	pod 'IQKeyboardManagerSwift'
 	pod 'EasyPeasy', '1.9.0'
-    
+	pod 'Firebase/Auth'
+	pod 'FBSDKCoreKit'
+	pod 'FBSDKLoginKit'
+	pod 'GoogleSignIn'
   # Pods for Esentai
 
 end

@@ -24,6 +24,8 @@
 		2FD1FDF3258B688E00CAAB51 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1FDF2258B688E00CAAB51 /* RegisterVC.swift */; };
 		2FD1FDF8258BB7F500CAAB51 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1FDF7258BB7F500CAAB51 /* Requests.swift */; };
 		2FD1FE03258BBB1100CAAB51 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1FE02258BBB1100CAAB51 /* Objects.swift */; };
+		2FD1FE0D258EA51300CAAB51 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1FE0C258EA51300CAAB51 /* WebViewVC.swift */; };
+		2FD1FE32258FC7B300CAAB51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1FE31258FC7B300CAAB51 /* GoogleService-Info.plist */; };
 		C1BA067D61CD2D94D140196C /* Pods_Esentai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6906ADAA248961A9E26C6B4 /* Pods_Esentai.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		2FD1FDF2258B688E00CAAB51 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		2FD1FDF7258BB7F500CAAB51 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		2FD1FE02258BBB1100CAAB51 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		2FD1FE0C258EA51300CAAB51 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		2FD1FE31258FC7B300CAAB51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6906ADAA248961A9E26C6B4 /* Pods_Esentai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Esentai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF6E1A1FD3AE1E52A3FD580 /* Pods-Esentai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Esentai.release.xcconfig"; path = "Target Support Files/Pods-Esentai/Pods-Esentai.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAF7BEB258AAC8B00835E9E /* AppDelegate.swift */,
+				2FD1FE0C258EA51300CAAB51 /* WebViewVC.swift */,
 				2FAF7BED258AAC8B00835E9E /* SceneDelegate.swift */,
 				2FD1FDF1258B654E00CAAB51 /* Auth */,
 				2FD1FDDA258AB3A200CAAB51 /* Views */,
@@ -94,6 +99,7 @@
 				2FAF7BF4258AAC8E00835E9E /* Assets.xcassets */,
 				2FAF7BF6258AAC8E00835E9E /* LaunchScreen.storyboard */,
 				2FAF7BF9258AAC8E00835E9E /* Info.plist */,
+				2FD1FE31258FC7B300CAAB51 /* GoogleService-Info.plist */,
 			);
 			path = Esentai;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 				2FAF7BE5258AAC8A00835E9E /* Frameworks */,
 				2FAF7BE6258AAC8A00835E9E /* Resources */,
 				1B687C16B3FABCEAB14241A1 /* [CP] Embed Pods Frameworks */,
+				2E830ACAC974E8AF9939C1F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FAF7BF8258AAC8E00835E9E /* LaunchScreen.storyboard in Resources */,
+				2FD1FE32258FC7B300CAAB51 /* GoogleService-Info.plist in Resources */,
 				2FAF7BF5258AAC8E00835E9E /* Assets.xcassets in Resources */,
 				2FAF7BF3258AAC8B00835E9E /* Main.storyboard in Resources */,
 			);
@@ -231,6 +239,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esentai/Pods-Esentai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E830ACAC974E8AF9939C1F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esentai/Pods-Esentai-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Esentai/Pods-Esentai-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Esentai/Pods-Esentai-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72426641C3EFBA4BA1CE5388 /* [CP] Check Pods Manifest.lock */ = {
@@ -264,6 +289,7 @@
 			files = (
 				2FAF7BF0258AAC8B00835E9E /* ViewController.swift in Sources */,
 				2FD1FDEC258AC18600CAAB51 /* SizedBox.swift in Sources */,
+				2FD1FE0D258EA51300CAAB51 /* WebViewVC.swift in Sources */,
 				2FD1FDE0258AB5BA00CAAB51 /* Extensions.swift in Sources */,
 				2FD1FDE3258AB9EA00CAAB51 /* LoginVC.swift in Sources */,
 				2FD1FDF8258BB7F500CAAB51 /* Requests.swift in Sources */,

@@ -7,112 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D10B787-EA98-4C59-B022-E8DBED990C0C"
+            uuid = "58E9584D-ECB8-40D6-B108-2B9F514704C0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Esentai/Auth/ChecSMSVC.swift"
+            filePath = "Esentai/Constants/Requests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "sendData()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "createUser(params:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F41C34EB-AFC9-42FD-82E1-C7DDAD73FDD9"
+            uuid = "DA5FF179-A80F-417D-890A-7D47814BF604"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Esentai/Auth/RegisterVC.swift"
+            filePath = "Esentai/Constants/Requests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "registerPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F41C34EB-AFC9-42FD-82E1-C7DDAD73FDD9 - 2fec66118a106bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Esentai.RegisterVC.registerPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Esentai"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sultan/Desktop/iOS%20Projects/Esentai/Esentai/Auth/RegisterVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "1876">
-               </Location>
-               <Location
-                  uuid = "F41C34EB-AFC9-42FD-82E1-C7DDAD73FDD9 - 4c0dd9ae788e06e7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Esentai.RootClass&gt;) -&gt; () in Esentai.RegisterVC.registerPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Esentai"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sultan/Desktop/iOS%20Projects/Esentai/Esentai/Auth/RegisterVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AC88A2B4-7944-43E6-BFEB-0C253705453C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Esentai/Auth/RegisterVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "registerPressed(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "createUser(params:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA80EE51-1A65-4E2A-8BE0-45BF0D9F4427"
+            uuid = "11E7B9CC-7CD6-468E-97C7-744EBEE65B30"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Esentai/Auth/RegisterVC.swift"
+            filePath = "Esentai/Auth/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "registerPressed(_:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BFA9DA3B-0DE1-4ABE-9127-F94140813030"
+            uuid = "4A35A809-C1A5-41C9-B2F8-A6B5DE2E89BB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Esentai/Auth/ChecSMSVC.swift"
+            filePath = "Esentai/Auth/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "registerReq()"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
