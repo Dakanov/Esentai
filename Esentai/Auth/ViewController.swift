@@ -13,6 +13,10 @@ import FBSDKLoginKit
 import GoogleSignIn
 
 class ViewController: UIViewController,LoginButtonDelegate {
+  
+    
+
+    
     
 
     let nameTitle = UIImageView()
@@ -20,6 +24,8 @@ class ViewController: UIViewController,LoginButtonDelegate {
     let loginButton = CustomButton()
     let fbButton = FBLoginButton()
     let googlesignInButton = GIDSignInButton()
+    let customGButton = UIImageView(image: #imageLiteral(resourceName: "GoogleBut"))
+    let customFBButton = UIImageView(image: #imageLiteral(resourceName: "FaceBookB"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,42 +63,44 @@ class ViewController: UIViewController,LoginButtonDelegate {
         loginButton.easy.layout(CenterY(61),Height(56),Left(32),Right(93))
         loginButton.addTarget(self, action: #selector(loginPressed(_:)), for: .touchUpInside)
         
-        self.view.addSubview(self.fbButton)
-        fbButton.easy.layout(Top(40).to(loginButton),Left(32),Width(64),Height(64))
-        self.view.addSubview(self.googlesignInButton)
-        googlesignInButton.easy.layout(Top(40).to(loginButton),Left(32).to(fbButton),Width(64),Height(64))
-        
+        let socNetLabel = UILabel()
+        socNetLabel.set(title: "или войти с помощью".uppercased())
+        self.view.addSubview(socNetLabel)
+        self.view.addSubview(self.customFBButton)
+        self.view.addSubview(self.customGButton)
+        socNetLabel.easy.layout(Top(40).to(loginButton),Left(32))
+        customFBButton.easy.layout(Top(80).to(loginButton),Left(32),Height(64),Width(64))
+        customGButton.easy.layout(Top(80).to(loginButton),Left(16).to(customFBButton),Width(64),Height(64))
     }
     func nav(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
-    
-    func googleAuth(){
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-
-          // Automatically sign in the user.
-          GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        GIDSignIn.sharedInstance().delegate = self
-                GIDSignIn.sharedInstance().signIn()
-
-    }
-    //MARK:- facebookLigonKit
-    func faceBookAuth(){
-        
-        self.fbButton.delegate = self
-        if let accessToken = AccessToken.current, !accessToken.isExpired { // User is logged in, do work such as go to next view controller.
-            UserDefaults.standard.setValue(accessToken.tokenString, forKey: "token")
-            self.showAlert(withTitle: "token", withMessage: accessToken.tokenString)
-        }
-    }
-
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         
     }
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         
+    }
+    func googleAuth(){
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        GIDSignIn.sharedInstance().delegate = self
+        customGButton.addTapGestureRecognizer {
+            GIDSignIn.sharedInstance().signIn()
+        }
+    }
+    //MARK:- facebookLigonKit
+    func faceBookAuth(){
+        self.fbButton.delegate = self
+        if let accessToken = AccessToken.current, !accessToken.isExpired { // User is logged in, do work such as go to next view controller.
+            UserDefaults.standard.setValue(accessToken.tokenString, forKey: "token")
+            self.showAlert(withTitle: "token", withMessage: accessToken.tokenString)
+        }
+        customFBButton.addTapGestureRecognizer {
+            self.fbButton.sendActions(for: .touchUpInside)
+        }
     }
     @objc func loginPressed(_ sender:UIButton){
         LoginVC.open(vc: self)
