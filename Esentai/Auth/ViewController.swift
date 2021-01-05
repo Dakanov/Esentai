@@ -84,6 +84,7 @@ class ViewController: UIViewController,LoginButtonDelegate {
         
     }
     func googleAuth(){
+        GIDSignIn.sharedInstance()?.signOut()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance().delegate = self

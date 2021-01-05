@@ -34,7 +34,7 @@ class WebViewVC: UIViewController, WKScriptMessageHandler, WKUIDelegate, WKNavig
         webView.uiDelegate = self
         
         let url = URL(string: "https://esentai-shop.kz/")
-        webView.configuration.userContentController.add(self, name: "bearer \(token)")
+        webView.configuration.userContentController.add(self, name: "Bearer \(token)")
         var req = URLRequest(url: url!)
         req.httpMethod = "POST"
 //        let urlConnection = NSURLConnection(request: req, delegate: self)
